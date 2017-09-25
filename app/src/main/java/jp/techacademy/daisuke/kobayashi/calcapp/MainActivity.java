@@ -13,7 +13,8 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity{
 
     EditText Value1, Value2;
-    double a, b;
+    double a = 0;
+    double b = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +40,13 @@ public class MainActivity extends AppCompatActivity{
             Value1 = (EditText) findViewById(R.id.value1);
             Value2 = (EditText) findViewById(R.id.value2);
 
-            a = Double.parseDouble(Value1.getText().toString());
-            b = Double.parseDouble(Value2.getText().toString());
+            try {
+                a = Double.parseDouble(Value1.getText().toString());
+                b = Double.parseDouble(Value2.getText().toString());
+            }catch (Exception ex){
+                }
 
-            Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
+                    Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
             intent.putExtra("VALUE1", a);
             intent.putExtra("VALUE2", b);
             intent.putExtra("FLAG",1);
@@ -57,8 +61,11 @@ public class MainActivity extends AppCompatActivity{
             Value1 = (EditText) findViewById(R.id.value1);
             Value2 = (EditText) findViewById(R.id.value2);
 
-            a = Double.parseDouble(Value1.getText().toString());
-            b = Double.parseDouble(Value2.getText().toString());
+            try {
+                a = Double.parseDouble(Value1.getText().toString());
+                b = Double.parseDouble(Value2.getText().toString());
+            }catch (Exception ex) {
+            }
 
             Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
             intent.putExtra("VALUE1", a);
@@ -75,8 +82,11 @@ public class MainActivity extends AppCompatActivity{
             Value1 = (EditText) findViewById(R.id.value1);
             Value2 = (EditText) findViewById(R.id.value2);
 
-            a = Double.parseDouble(Value1.getText().toString());
-            b = Double.parseDouble(Value2.getText().toString());
+            try {
+                a = Double.parseDouble(Value1.getText().toString());
+                b = Double.parseDouble(Value2.getText().toString());
+            }catch(Exception ex) {
+            }
 
             Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
             intent.putExtra("VALUE1", a);
@@ -93,8 +103,12 @@ public class MainActivity extends AppCompatActivity{
             Value1 = (EditText) findViewById(R.id.value1);
             Value2 = (EditText) findViewById(R.id.value2);
 
-            a = Double.parseDouble(Value1.getText().toString());
-            b = Double.parseDouble(Value2.getText().toString());
+            try {
+                a = Double.parseDouble(Value1.getText().toString());
+                b = Double.parseDouble(Value2.getText().toString());
+            }catch (Exception ex){
+
+            }
 
             Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
             intent.putExtra("VALUE1", a);

@@ -3,6 +3,7 @@ package jp.techacademy.daisuke.kobayashi.calcapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,12 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Value1 = (EditText) findViewById(R.id.value1);
+        Value2 = (EditText) findViewById(R.id.value2);
+
+        Value1.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
+        Value2.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
+
         Button button1 = (Button) findViewById(R.id.ka);
         Button button2 = (Button) findViewById(R.id.gen);
         Button button3 = (Button) findViewById(R.id.zyou);
@@ -37,16 +44,13 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public void onClick(View view) {
 
-            Value1 = (EditText) findViewById(R.id.value1);
-            Value2 = (EditText) findViewById(R.id.value2);
-
             try {
                 a = Double.parseDouble(Value1.getText().toString());
                 b = Double.parseDouble(Value2.getText().toString());
-            }catch (Exception ex){
+            }catch (Exception ex) {
                 }
 
-                    Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
+            Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
             intent.putExtra("VALUE1", a);
             intent.putExtra("VALUE2", b);
             intent.putExtra("FLAG",1);
@@ -57,9 +61,6 @@ public class MainActivity extends AppCompatActivity{
     OnClickListener button2ClickListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
-
-            Value1 = (EditText) findViewById(R.id.value1);
-            Value2 = (EditText) findViewById(R.id.value2);
 
             try {
                 a = Double.parseDouble(Value1.getText().toString());
@@ -79,9 +80,6 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public void onClick(View view) {
 
-            Value1 = (EditText) findViewById(R.id.value1);
-            Value2 = (EditText) findViewById(R.id.value2);
-
             try {
                 a = Double.parseDouble(Value1.getText().toString());
                 b = Double.parseDouble(Value2.getText().toString());
@@ -100,14 +98,10 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public void onClick(View view) {
 
-            Value1 = (EditText) findViewById(R.id.value1);
-            Value2 = (EditText) findViewById(R.id.value2);
-
             try {
                 a = Double.parseDouble(Value1.getText().toString());
                 b = Double.parseDouble(Value2.getText().toString());
-            }catch (Exception ex){
-
+            }catch (Exception ex) {
             }
 
             Intent intent = new Intent(getApplicationContext(), Second_Activity.class);
